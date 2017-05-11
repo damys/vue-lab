@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>图书管理</title>
+<style>
+*{margin:0;padding:0}
+body{ font-size: 12px; color: #333}
+table,td{
+	border:1px solid #ddd;
+	border-collapse:collapse;
+}
+table{
+	width: 640px;
+	margin:20px auto;
+}
+th{background: #f0f0f0; border:1px solid #ddd;}
+tr{
+	line-height: 30px;			
+}
+td{
+	text-align: center;
+}
+button{
+	height: 24px;
+	padding: 2px 8px;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+fieldset{
+	width: 590px;
+	margin:0 auto;
+	padding:25px;
+	border-color: #fff;
+}
+fieldset p{
+	line-height: 30px;
+}
+</style>
+<script src="http://cdn.bootcss.com/vue/2.2.1/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>书名</th>
+			<th>作者</th>
+			<th>价格</th>
+			<th>操作</th>
+		</tr>
+		<tr v-for="(book,index) in books">
+			<td>{{book.id}}</td>
+			<td>{{book.name}}</td>
+			<td>{{book.author}}</td>
+			<td>{{book.price}}</td>
+			<td>
+				<button @click="delBook(index)">删除</button>
+			</td>
+		</tr>
+	</table>
+
+	<fieldset>
+		<legend>添加新书</legend>
+		<p>书名：<input type="text" v-model="newBook.name"></p>
+		<p>作者：<input type="text" v-model="newBook.author"></p>
+		<p>价格：<input type="text" v-model="newBook.price"></p>
+		<p><button @click="addBook">添加</button></p>
+	</fieldset>
+</div>
+
+
+<script>
+var app = new Vue({
+	el:'#app',
+	data:{
+		books:[
+			{id:1, name:'红楼梦', author:'曹雪芹', price:'1'},
+			{id:2, name:'西游记', author:'吴承恩', price:'2'},
+			{id:3, name:'水浒传', author:'施耐庵', price:'3'}
+		],
+		newBook:{
+			id:0,
+			name:'',
+			author:'',
+			price:''
+		}
+	},
+	methods:{
+		delBook:function(idx){
+			if(window.confirm('确认要删除？')){
+				this.books.splice(idx, 1);
+			}
+			
+		},
+		addBook:function(){
+			// 约束
+			if(this.newBook.name.length == 0) {
+				alert('书名不能为空');
+				return;
+			}	
+			
+			if(this.newBook.author.length == 0){
+				alert('书的作者不能为空');
+				return;
+			}
+
+			if(this.newBook.price.length == 0){
+				this.newBook.price = '0'
+			}	
+
+			// 计算插入id
+			var maxId = 0;
+			for(var i=0; i<this.books.length; i++){
+				if(maxId<this.books[i].id){
+					maxId = this.books[i].id;
+				}
+			}
+			this.newBook.id = maxId+1;
+
+			// 插入到 books中
+			this.books.push(this.newBook);
+
+			// 清空新书
+			this.newBook = {};
+		}
+	}
+});
+</script>
+</body>
+</html>s

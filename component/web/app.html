@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>App</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <home></home>
+<!--         <header-vue></header-vue> -->
+        <!--
+        v-bind:is这个component的属性 可以动态的选择哪个组件
+        -->
+        <component :is="which"></component>
+        <button @click="changeComponeent">调用组件</button>
+    </div>
+
+<script src="./js/vue.js" type="text/javascript"></script>
+<script type="modules">
+import headerVue from './components/header.vue';
+</script>
+
+
+<script type="text/javascript">
+var componentA = {  template: `<p>我是组件A</p>` }
+var componentB = {  template: `<p>我是组件B</p>`  }
+var componentC = {  template: `<p>我是组件C</p>`  }
+
+const home = { template: '<div><h1>首页</h1></div>' }
+
+
+new Vue({
+    el:'#app',
+    data:{
+        which:'componentA'
+    },
+    components:{
+        'home':home,
+        'componentA':componentA,
+        'componentB':componentB,
+        'componentC':componentC,
+        // 'headerVue':headerVue
+    },
+    methods:{
+        changeComponeent:function(){
+            if(this.which == 'componentA'){
+                this.which = 'componentB'
+            }else if(this.which == 'componentB'){
+                this.which = 'componentC'
+            }else {
+                this.which = 'componentA'
+            }
+        }
+    }
+
+})
+</script>
+</body>
+</html>

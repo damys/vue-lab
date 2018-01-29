@@ -3,7 +3,31 @@
 <!--     <img src="./assets/logo.png"> -->
     <header-vue></header-vue>
     <for-vue></for-vue>
+
     <sub-vue text1='text1-111' v-bind:text2='text2' @sayHello="listen"></sub-vue>
+    
+    <!-- router -->
+    <router-vue></router-vue>
+
+    <h4>href="#/list"</h4> 
+    <a href="#/list">list</a>
+    <a href="#/detail">detail</a>
+
+    <h4>router-link to="/list"</h4>
+    <router-link to="/list">list</router-link>
+    <router-link to="/detail">detail</router-link>
+
+    <h4>router-link :to="{name:'list'}</h4>
+    <router-link :to="{name:'list'}">list</router-link>
+    <router-link :to="{name:'detail'}">detail</router-link>
+
+    <h4>router-link :to="{name:'list'}</h4>
+    <router-link :to="{name:'detail', query:{id:1, name:'tom'}}">detail</router-link>
+    
+    <!-- go 转转 -->
+
+    <!-- 路由加载的内容显示区 -->
+    <router-view></router-view>
 
     <ui-vue></ui-vue>
     <footer-vue></footer-vue>
@@ -21,6 +45,7 @@ import forVue from './components/for.vue'
 import subVue from './components/sub.vue'
 import footerVue from './components/footer.vue'
 import uiVue from './components/ui.vue'
+import routerVue from './components/router.vue'
 
 export default {
   data(){
@@ -49,7 +74,8 @@ export default {
     'forVue':forVue,
     'subVue':subVue,
     'footerVue':footerVue,    
-    'uiVue':uiVue
+    'uiVue':uiVue,
+    'routerVue':routerVue
   }
 
 }

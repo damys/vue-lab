@@ -1,21 +1,15 @@
 <template>
     <div>
         <h1>{{msg}}</h1>
-        <hr>
     </div>
 </template>
 
 <script>
-export default {
-    data () {
+export default{
+    data(){
         return {
-          msg: 'header'
+            msg:'Music1'
         }
-    },
-    
+    }
 }
 </script>
-
-<style scoped>
-
-</style>

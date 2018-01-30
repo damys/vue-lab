@@ -1,21 +1,20 @@
 <template>
     <div>
         <h1>{{msg}}</h1>
-        <hr>
     </div>
 </template>
 
 <script>
 export default {
-    data () {
-        return {
-          msg: 'header'
-        }
-    },
-    
+  data () {
+    return {
+      msg: 'Home page'
+    }
+  }
 }
 </script>
 
 <style scoped>
 
 </style>
+

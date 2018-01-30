@@ -1,21 +1,16 @@
 <template>
     <div>
         <h1>{{msg}}</h1>
-        <hr>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-export default {
-    data () {
+export default{
+    data(){
         return {
-          msg: 'header'
+            msg:'Music'
         }
-    },
-    
+    }
 }
 </script>
-
-<style scoped>
-
-</style>

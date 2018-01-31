@@ -24,7 +24,7 @@
     <router-link :to="{name:'music'}">Music</router-link>
     <router-link :to="{name:'music_music1'}">Music1</router-link>
     <router-link :to="{name:'music_music2'}">Music2</router-link>
-
+    <url-vue></url-vue>
 
     <router-view name='header'></router-view>
     <router-view></router-view>
@@ -34,7 +34,7 @@
 
 <script>
 //-- 引用组件 -------------------------
-// import contentVue from './components/content.vue'
+import urlVue from './components/url.vue'
 
 export default {
   data(){
@@ -53,7 +53,7 @@ export default {
 
   // 局部：模板中使用组件
   components: {
-    // 'contentVue':contentVue
+    'urlVue':urlVue
   }
 }
 </script>

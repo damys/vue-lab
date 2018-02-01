@@ -48,7 +48,7 @@ import Music from './components/music.vue';
 import Music1 from './components/music1.vue';
 import Music2 from './components/music2.vue';
 
-//----安装插件---------------------------------
+//----安装VueRouter插件---------------------------------
 Vue.use(VueRouter)
 // 创建路由对象并配置路由规则
 const router = new VueRouter({
@@ -96,6 +96,49 @@ const router = new VueRouter({
         {path:'*', component:NotFound}
     ]
 });
+
+//----安装Vue-resource， Axios插件---------------------------------
+// 带有vue- 开头的插件，安装后可以通过：this.$http 再调用
+// 说明：Vue 是所有实例对象的构造函数， vue.prototype.$http
+import VueResource from 'vue-resource';
+Vue.use(VueResource)
+
+import Axios from 'axios';
+Vue.prototype.$axios = Axios;   //原型上挂载一个属性，使用：this.$axios
+// Axios.defaults.baseURL = 'http://127.0.0.1';
+
+import VueJsonp from 'vue-jsonp';
+import { read } from 'fs';
+Vue.use(VueJsonp)
+
+//-- 拦截器---------------------------------
+// 一般使用
+Axios.defaults.headers = {
+    accept:'default'
+}
+Axios.interceptors.request.use( function(config){
+    // 重置header
+    config.headers = {
+        accept:'interceptors'
+    }
+
+    return config;
+})
+
+// 加载数据时显示加载提示
+Axios.interceptors.request.use( function(config){
+    // 请求数据时：显示加载提示
+    MintUi.Indicator.open();
+
+    return config;
+})
+Axios.interceptors.response.use( function(config){
+    // 在响应回来后：隐藏加载提示
+    MintUi.Indicator.close();
+
+    return config;
+})
+
 
 new Vue({
     el: '#app',

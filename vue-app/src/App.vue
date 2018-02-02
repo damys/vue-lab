@@ -26,6 +26,8 @@
     <router-link :to="{name:'music_music2'}">Music2</router-link>
     <url-vue></url-vue>
 
+    <watch-vue></watch-vue>
+
     <router-view name='header'></router-view>
     <router-view></router-view>
     <router-view name='footer'></router-view>
@@ -35,6 +37,7 @@
 <script>
 //-- 引用组件 -------------------------
 import urlVue from './components/url.vue'
+import watchVue from './components/watch.vue'
 
 export default {
   data(){
@@ -53,7 +56,8 @@ export default {
 
   // 局部：模板中使用组件
   components: {
-    'urlVue':urlVue
+    'urlVue':urlVue,
+    'watchVue':watchVue
   }
 }
 </script>

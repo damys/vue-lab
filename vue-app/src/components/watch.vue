@@ -2,8 +2,8 @@
     <div class="footer">
         <hr/>
         <h1>{{msg}}</h1>
-        <input type="text" v-model='text'>
-        <div>{{person.name}}</div>
+        基本数据类型：<input type="text" v-model='text'>
+        对象数据类型：<div>{{person.name}}</div>
         <button @click="changValue">changValue</button>
     </div>
 </template>

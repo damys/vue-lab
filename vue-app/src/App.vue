@@ -27,6 +27,7 @@
     <url-vue></url-vue>
 
     <watch-vue></watch-vue>
+    <computed-vue></computed-vue>
 
     <router-view name='header'></router-view>
     <router-view></router-view>
@@ -38,6 +39,7 @@
 //-- 引用组件 -------------------------
 import urlVue from './components/url.vue'
 import watchVue from './components/watch.vue'
+import computedVue from './components/computed.vue'
 
 export default {
   data(){
@@ -57,7 +59,8 @@ export default {
   // 局部：模板中使用组件
   components: {
     'urlVue':urlVue,
-    'watchVue':watchVue
+    'watchVue':watchVue,
+    'computedVue':computedVue
   }
 }
 </script>

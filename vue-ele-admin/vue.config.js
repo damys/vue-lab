@@ -22,7 +22,7 @@ module.exports = {
   // },
   devServer: {
     port: 8086,
-    host: 'localhost', // 0.0.0.0
+    host: '127.0.0.1', // 0.0.0.0
     // open: true,          // 配置自动启动浏览器
     https: false,
     hotOnly: false,

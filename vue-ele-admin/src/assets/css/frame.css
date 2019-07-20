@@ -140,8 +140,7 @@
 
 .tagbar .tag-list li {
   float: left;
-  line-height: 30px;
-  padding: 0 12px;
+  line-height: 30px;  
   margin: 4px 0 4px 4px;
   font-size: 12px;
   cursor: pointer;
@@ -158,6 +157,7 @@
 .tagbar .tag-list .tag-title {
 float: left;
 max-width: 84px;
+padding: 0 12px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
@@ -165,7 +165,7 @@ color: #444;
 text-decoration: none;
 }
 .tagbar .tag-list .tag-close {
-margin-left: 10px;
+margin-right: 10px;
 }
 .tagbar .tag-list .tag-close>i {
 display:inline-block;

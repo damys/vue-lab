@@ -68,11 +68,6 @@ export default new Router({
           component: () => import('./views/tabs.vue')
         },
         {
-          path: '/author',
-          meta: { title: 'Author' },
-          component: () => import('./views/author.vue')
-        },
-        {
           path: '/403',
           meta: { title: '403' },
           component: () => import('./views/403.vue')

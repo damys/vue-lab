@@ -1,0 +1,199 @@
+/*-------- module side -----------*/
+.sidebar{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom:0;
+  background: #fff;
+  color: #333;
+  overflow-y: scroll;
+}
+
+.sidebar .logo{
+  width:230px;
+  height: 56px;
+  line-height: 56px;
+  color: #fff;
+  background: #3367d6;
+  text-align: center;
+  font-size: 18px;
+}
+.sidebar .logo-min {
+  width: auto;
+}
+
+.sidebar-a-menu:not(.a-menu--collapse){
+  width: 230px;
+}
+
+.sidebar [class^="icon--"]{
+  margin-right: 6px;
+  color: #333;
+}
+
+.sidebar .is-active>i{
+  color: #409EFF;
+}
+
+.sidebar .a-menu-item{
+  height: 42px;
+  line-height: 42px;
+}
+
+.sidebar .is-active.is-opened .a-submenu__title{
+  background: rgba(64, 158, 255, .1);
+ }
+
+/*-------- module head -----------*/
+.headbar {
+  position: relative;
+  box-sizing: border-box;
+  background: #3367d6;
+  width: 100%;
+  height: 56px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.headbar .header-left {
+  float: left;
+  padding: 0 18px;
+  cursor: pointer;
+}
+
+.headbar .header-left>i{
+  display: block;
+  line-height: 56px;
+}
+
+.headbar .header-right{
+  float: right;
+  padding-right: 12px;
+}
+
+.headbar .header-right .header-user{
+  display: flex;
+  height: 56px;
+  align-items: center;
+}
+.headbar .header-right .header-user>li {
+  font-size: 14px;
+  float: left;
+}
+.headbar .header-right .icon-fullscreen{
+  transform: rotate(45deg);
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.headbar .header-right .icon-bell{
+  position: relative;
+  width: 30px;
+  color: #fff;
+  text-align: center;
+}
+.headbar .header-right .icon-bell-badge{
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #f56c6c;
+  color: #fff;
+}
+
+.headbar .header-right .user-name{
+  margin-left: 10px;
+}
+.headbar .header-right .user-name .user-name-icon {
+  color: #fff;
+  cursor: pointer;
+}
+.headbar .header-right .user-avator {
+  margin-left: 20px;
+}
+.headbar .header-right .user-avator img {
+  display: block;
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+}
+
+/*-------- module tag -----------*/
+.tagbar {
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+  background: #fff;
+  padding-right: 40px;
+  box-shadow: 2px 1px 6px #ddd;
+}
+
+.tagbar .tag-list {
+  width: 100%;
+  height: 100%;
+}
+
+.tagbar .tag-list li {
+  float: left;
+  line-height: 30px;
+  padding: 0 12px;
+  margin: 4px 0 4px 4px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #bbb;
+  background: #f3f3f3;
+  transition: all .2s ease-in;
+}
+
+.tagbar .tag-list li.active {
+  border: 1px solid #409EFF;
+  background-color: #409EFF;
+}
+
+.tagbar .tag-list .tag-title {
+float: left;
+max-width: 84px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+color: #444;
+text-decoration: none;
+}
+.tagbar .tag-list .tag-close {
+margin-left: 10px;
+}
+.tagbar .tag-list .tag-close>i {
+display:inline-block;
+font-size: 12px;
+}
+.tagbar .tag-list .tag-close:hover>i {
+transform: scale(1.4);
+}
+
+.tagbar .tag-list li.active .tag-title,
+.tagbar .tag-list li.active .tag-close {
+  color: #fff;
+}
+
+.tagbar .tag-list li:not(.active):hover {
+  background: #f5f5f5;
+}
+
+.tagbar .tag-option {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  border-left: 1px solid #ddd;
+}
+.tagbar .tag-option .dropdown-icon {
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}

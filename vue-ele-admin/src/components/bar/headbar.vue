@@ -18,7 +18,7 @@
             </el-tooltip>
             <span class="icon-bell-badge" v-if="message"></span>
         </li>
-        <li class="user-avator"><img src="@/assets/img/img.jpg"></li>
+        <li class="user-avator"><img src="@/assets/img/user.jpg"></li>
         <li class="user-name">
           <el-dropdown @command="handleClick">
             <span class="el-dropdown-link user-name-icon">{{username}} <i class="icon--biaotou-daoxu"></i></span>
